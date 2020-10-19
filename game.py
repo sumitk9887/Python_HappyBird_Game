@@ -28,7 +28,9 @@ def score(count):
     text = font.render("Score: " + str(count), True, white)
     screen.blit(text, [0, 0])
 
-
+def blocks(x_block, y_block, block_width, block_height, gap, color):
+    pygame.draw.rect(screen, color, [x_block, y_block, block_width, block_height])
+    pygame.draw.rect(screen, color, [x_block, y_block + block_height + int(gap), block_width, height])
 
 def msg_surface(text):
     small_text = pygame.font.Font('font_1.ttf', 20)
