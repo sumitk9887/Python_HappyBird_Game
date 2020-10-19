@@ -22,7 +22,11 @@ background = pygame.transform.scale(background, (width, height))
 bird_image = pygame.image.load('flappy_bird.png')
 bird_image = pygame.transform.scale(bird_image, (100, 100))
 
-
+# Score Function
+def score(count):
+    font = pygame.font.Font('font_1.ttf', 20)
+    text = font.render("Score: " + str(count), True, white)
+    screen.blit(text, [0, 0])
 
 
 
