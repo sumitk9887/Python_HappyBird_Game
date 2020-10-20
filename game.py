@@ -31,6 +31,10 @@ def score(count):
 def blocks(x_block, y_block, block_width, block_height, gap, color):
     pygame.draw.rect(screen, color, [x_block, y_block, block_width, block_height])
     pygame.draw.rect(screen, color, [x_block, y_block + block_height + int(gap), block_width, height])
+ 
+def make_text_objects(text, font):
+    text_surface = font.render(text, True, sunset)
+    return text_surface, text_surface.get_rect()
 
 def replay_or_quit():
     for event in pygame.event.get([pygame.KEYDOWN, pygame.KEYUP, pygame.QUIT]):
