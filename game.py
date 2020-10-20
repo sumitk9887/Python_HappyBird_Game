@@ -32,6 +32,19 @@ def blocks(x_block, y_block, block_width, block_height, gap, color):
     pygame.draw.rect(screen, color, [x_block, y_block, block_width, block_height])
     pygame.draw.rect(screen, color, [x_block, y_block + block_height + int(gap), block_width, height])
 
+def replay_or_quit():
+    for event in pygame.event.get([pygame.KEYDOWN, pygame.KEYUP, pygame.QUIT]):
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+
+        elif event.type == pygame.KEYDOWN:
+            continue
+
+        return event.key
+
+    return None
+
 def msg_surface(text):
     small_text = pygame.font.Font('font_1.ttf', 20)
     large_text = pygame.font.Font('font_1.ttf', 150)
