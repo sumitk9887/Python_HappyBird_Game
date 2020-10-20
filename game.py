@@ -31,6 +31,10 @@ def score(count):
 def blocks(x_block, y_block, block_width, block_height, gap, color):
     pygame.draw.rect(screen, color, [x_block, y_block, block_width, block_height])
     pygame.draw.rect(screen, color, [x_block, y_block + block_height + int(gap), block_width, height])
+ 
+def make_text_objects(text, font):
+    text_surface = font.render(text, True, sunset)
+    return text_surface, text_surface.get_rect()
 
 def msg_surface(text):
     small_text = pygame.font.Font('font_1.ttf', 20)
